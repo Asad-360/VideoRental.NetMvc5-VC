@@ -1,5 +1,5 @@
-﻿@using VidlyMovieRentalApp.Models
-@model VidlyMovieRentalApp.Models.Movie
+﻿@using System.ServiceModel.Configuration
+@model VidlyMovieRentalApp.ViewModels.RandomMovieViewModel
 @{
     // Title of the page shown in the browser
     ViewBag.Title = "Random";
@@ -7,7 +7,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@* For ViewData *@
-@*<h2>@(((Movie)ViewData["Movie"]).Name)</h2>*@
-@* For View Bag *@
-<h2>@ViewBag.Movie.Name</h2>
+<h2>@Model.Movie.Name</h2>
+@{
+
+    var className="";
+    if (Model.Customers.Count==2)
+    {
+        className = "popular";
+    }
+}
+
+<ul class="@className">
+
+    @{
+        foreach (var customers in Model.Customers)
+        {
+            <li>@customers.Name</li>
+        }
+    }
+</ul>
