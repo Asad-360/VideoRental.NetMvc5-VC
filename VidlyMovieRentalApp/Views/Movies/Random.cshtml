@@ -1,4 +1,5 @@
-﻿@model VidlyMovieRentalApp.Models.Movie
+﻿@using VidlyMovieRentalApp.Models
+@model VidlyMovieRentalApp.Models.Movie
 @{
     // Title of the page shown in the browser
     ViewBag.Title = "Random";
@@ -6,5 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
-
+@* For ViewData *@
+@*<h2>@(((Movie)ViewData["Movie"]).Name)</h2>*@
+@* For View Bag *@
+<h2>@ViewBag.Movie.Name</h2>
