@@ -18,5 +18,11 @@ namespace VidlyMovieRentalApp.Controllers
             };
             return View(movie);
         }
+        //For Convention Based Routing
+        public ActionResult ByReleasedDate(int year , byte month)
+        {
+            return Content(year+"/"+month);
+        }
     }
 }
+
