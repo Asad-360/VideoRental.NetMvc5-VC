@@ -18,8 +18,10 @@ namespace VidlyMovieRentalApp.Controllers
             };
             return View(movie);
         }
-        //For Convention Based Routing
-        public ActionResult ByReleasedDate(int year , byte month)
+        //For Convention Based Routing use route.config
+        //Attribute based Routes
+        [Route("movies/released/{year:range(10,50):regex(\\d{2})}/{month}")]
+        public ActionResult ByReleasedDate(int year , int month)
         {
             return Content(year+"/"+month);
         }
