@@ -1,5 +1,4 @@
-﻿@using System.ServiceModel.Configuration
-@model VidlyMovieRentalApp.ViewModels.RandomMovieViewModel
+﻿@model IEnumerable<VidlyMovieRentalApp.Models.Movie>
 @{
     // Title of the page shown in the browser
     ViewBag.Title = "Random";
@@ -7,22 +6,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Movie.Name</h2>
-@{
+<h2></h2>
 
-    var className="";
-    if (Model.Customers.Count==2)
-    {
-        className = "popular";
-    }
-}
-
-<ul class="@className">
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Name</th>
+    </tr>
 
     @{
-        foreach (var customers in Model.Customers)
+        foreach (var movie in Model)
         {
-            <li>@customers.Name</li>
+            <tr>
+                <td>@movie.Name</td>
+
+            </tr>
         }
     }
-</ul>
+</table>

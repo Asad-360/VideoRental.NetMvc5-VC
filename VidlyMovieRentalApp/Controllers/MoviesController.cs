@@ -13,26 +13,25 @@ namespace VidlyMovieRentalApp.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie
-            {
-                Name = "Shrek!"
-            };
-
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "John Ted"},
-                new Customer() { Name = "Alex Bay"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-            
-            return View(viewModel);
+            var movies = GetMovies();
+            return View(movies);
         }
-      
+
+        public ActionResult Details()
+        {
+            return View();
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            var movies = new List<Movie>
+            {
+                new Movie{Name = "Shrek 2"},
+                new Movie { Name = "Toy Story 3"}
+            };
+            return movies;
+        }
+
     }
 }
 

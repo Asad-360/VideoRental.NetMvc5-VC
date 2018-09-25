@@ -1,27 +1,31 @@
-﻿@model List<VidlyMovieRentalApp.Models.Customer>
+﻿@model IEnumerable<VidlyMovieRentalApp.Models.Customer>
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Customers</h2>
-<table class="table table-bordered table-hover">
-    <tr>
+@if (!Model.Any())
+{
+    <p>We do not have any Customer yet!</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <tr>
 
 
         <th>Customer Name</th>
 
         @{
-        
+
             foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(item.Name,"Details",new {item.Id})</td>
+                    <td>@Html.ActionLink(item.Name, "Details", new {item.Id})</td>
                 </tr>
-           
             }
-        
         }
 
 
-        
     </table>
+}
