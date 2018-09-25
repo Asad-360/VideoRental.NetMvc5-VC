@@ -207,11 +207,24 @@
     <Compile Include="Migrations\201809251632193_InitialModel.Designer.cs">
       <DependentUpon>201809251632193_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809251647538_IsSubscribedToNewsLetter.cs" />
+    <Compile Include="Migrations\201809251647538_IsSubscribedToNewsLetter.Designer.cs">
+      <DependentUpon>201809251647538_IsSubscribedToNewsLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809251653231_AddMovieModelToDatabase.cs" />
+    <Compile Include="Migrations\201809251653231_AddMovieModelToDatabase.Designer.cs">
+      <DependentUpon>201809251653231_AddMovieModelToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809251705213_AddMembershipType.cs" />
+    <Compile Include="Migrations\201809251705213_AddMembershipType.Designer.cs">
+      <DependentUpon>201809251705213_AddMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -297,6 +310,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809251632193_InitialModel.resx">
       <DependentUpon>201809251632193_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251647538_IsSubscribedToNewsLetter.resx">
+      <DependentUpon>201809251647538_IsSubscribedToNewsLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251653231_AddMovieModelToDatabase.resx">
+      <DependentUpon>201809251653231_AddMovieModelToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251705213_AddMembershipType.resx">
+      <DependentUpon>201809251705213_AddMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
