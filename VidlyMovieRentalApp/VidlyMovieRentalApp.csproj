@@ -219,6 +219,14 @@
     <Compile Include="Migrations\201809251705213_AddMembershipType.Designer.cs">
       <DependentUpon>201809251705213_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809251719482_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201809251719482_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201809251719482_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809260623022_AddingConventionToCustomerTable.cs" />
+    <Compile Include="Migrations\201809260623022_AddingConventionToCustomerTable.Designer.cs">
+      <DependentUpon>201809260623022_AddingConventionToCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -319,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251705213_AddMembershipType.resx">
       <DependentUpon>201809251705213_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251719482_PopulateMembershipType.resx">
+      <DependentUpon>201809251719482_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809260623022_AddingConventionToCustomerTable.resx">
+      <DependentUpon>201809260623022_AddingConventionToCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
