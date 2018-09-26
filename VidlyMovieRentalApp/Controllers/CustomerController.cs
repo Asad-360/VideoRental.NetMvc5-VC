@@ -9,16 +9,23 @@ namespace VidlyMovieRentalApp.Controllers
 {
     public class CustomerController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public CustomerController()
+        {
+            _context= new ApplicationDbContext();
+            ;
+        }
         // GET: Customer
         public ActionResult Index()
         {
-            var customers = GetCustomers();
+            var customers = _context.Customers.ToList();
             return View(customers);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -26,16 +33,6 @@ namespace VidlyMovieRentalApp.Controllers
             //ViewBag.Id = id;
             return View(customer);
         }
-
-        private IEnumerable<Customer> GetCustomers()
-        {
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Marry Williams", Id = 1},
-                new Customer {Name = "John Doe" , Id=2}
-            };
-
-            return customers;
-        }
+       
     }
 }
