@@ -7,13 +7,13 @@ namespace VidlyMovieRentalApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddDataIntoTheMovieField : IMigrationMetadata
+    public sealed partial class now : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddDataIntoTheMovieField));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(now));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809261742017_AddDataIntoTheMovieField"; }
+            get { return "201809271723083_now"; }
         }
         
         string IMigrationMetadata.Source

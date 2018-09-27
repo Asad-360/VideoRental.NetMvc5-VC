@@ -20,13 +20,13 @@ namespace VidlyMovieRentalApp.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movies = _context.Movies.Include(m=>m.Genre).ToList();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
-      
 
-      
+
+
 
     }
 }

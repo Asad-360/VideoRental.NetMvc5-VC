@@ -11,7 +11,7 @@ namespace VidlyMovieRentalApp.Migrations
                 "dbo.Genres",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Byte(nullable: false, identity: true),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -19,7 +19,7 @@ namespace VidlyMovieRentalApp.Migrations
             AddColumn("dbo.Movies", "ReleasedDate", c => c.DateTime(nullable: false));
             AddColumn("dbo.Movies", "DateAdded", c => c.DateTime(nullable: false));
             AddColumn("dbo.Movies", "NumberInStock", c => c.Byte(nullable: false));
-            AddColumn("dbo.Movies", "GenreId", c => c.Int(nullable: false));
+            AddColumn("dbo.Movies", "GenreId", c => c.Byte(nullable: false));
             CreateIndex("dbo.Movies", "GenreId");
             AddForeignKey("dbo.Movies", "GenreId", "dbo.Genres", "Id", cascadeDelete: true);
         }

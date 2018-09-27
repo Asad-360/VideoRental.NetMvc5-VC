@@ -7,12 +7,12 @@ namespace VidlyMovieRentalApp.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Customers", "BirthDay", c => c.DateTime());
+            AddColumn("dbo.Customers", "Birthdate", c => c.DateTime());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Customers", "BirthDay");
+            DropColumn("dbo.Customers", "Birthdate");
         }
     }
 }
