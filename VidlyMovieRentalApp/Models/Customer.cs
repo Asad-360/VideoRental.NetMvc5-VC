@@ -8,6 +8,7 @@ namespace VidlyMovieRentalApp.Models
 {
     public class Customer
     {
+        public DateTime? BirthDay { get; set; }
         public int Id { get; set; }
         [Required]
         [StringLength(255)]

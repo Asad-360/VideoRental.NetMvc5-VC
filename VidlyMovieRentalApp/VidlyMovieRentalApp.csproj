@@ -227,9 +227,30 @@
     <Compile Include="Migrations\201809260623022_AddingConventionToCustomerTable.Designer.cs">
       <DependentUpon>201809260623022_AddingConventionToCustomerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809261048341_AddingNameColumnToMembershipType.cs" />
+    <Compile Include="Migrations\201809261048341_AddingNameColumnToMembershipType.Designer.cs">
+      <DependentUpon>201809261048341_AddingNameColumnToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809261122289_SeedingMembershipTypeTable.cs" />
+    <Compile Include="Migrations\201809261122289_SeedingMembershipTypeTable.Designer.cs">
+      <DependentUpon>201809261122289_SeedingMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809261146198_addingbirthdaytocustomertable.cs" />
+    <Compile Include="Migrations\201809261146198_addingbirthdaytocustomertable.Designer.cs">
+      <DependentUpon>201809261146198_addingbirthdaytocustomertable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809261723103_addgenretabletodatabase.cs" />
+    <Compile Include="Migrations\201809261723103_addgenretabletodatabase.Designer.cs">
+      <DependentUpon>201809261723103_addgenretabletodatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809261742017_AddDataIntoTheMovieField.cs" />
+    <Compile Include="Migrations\201809261742017_AddDataIntoTheMovieField.Designer.cs">
+      <DependentUpon>201809261742017_AddDataIntoTheMovieField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -333,6 +354,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809260623022_AddingConventionToCustomerTable.resx">
       <DependentUpon>201809260623022_AddingConventionToCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261048341_AddingNameColumnToMembershipType.resx">
+      <DependentUpon>201809261048341_AddingNameColumnToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261122289_SeedingMembershipTypeTable.resx">
+      <DependentUpon>201809261122289_SeedingMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261146198_addingbirthdaytocustomertable.resx">
+      <DependentUpon>201809261146198_addingbirthdaytocustomertable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261723103_addgenretabletodatabase.resx">
+      <DependentUpon>201809261723103_addgenretabletodatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809261742017_AddDataIntoTheMovieField.resx">
+      <DependentUpon>201809261742017_AddDataIntoTheMovieField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
