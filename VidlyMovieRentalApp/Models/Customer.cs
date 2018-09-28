@@ -13,7 +13,7 @@ namespace VidlyMovieRentalApp.Models
 
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Customer Name")]
         [StringLength(255)]
 
         public String Name { get; set; }

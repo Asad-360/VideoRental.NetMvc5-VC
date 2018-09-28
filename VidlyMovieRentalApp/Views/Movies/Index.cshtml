@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<VidlyMovieRentalApp.Models.Movie>
 @{
     // Title of the page shown in the browser
-    ViewBag.Title = "Random";
+    ViewBag.Title = "Index";
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2></h2>
-
-<table class="table table-bordered table-hover">
+<h2><a href="/movies/movieform" type="button" class="btn btn-primary">New Movie</a></h2>
+<table class="table table-bordered table-hover table-striped">
     <tr>
         <th>Name</th>
         <th>Genre</th>
@@ -18,7 +17,7 @@
         foreach (var movie in Model)
         {
             <tr>
-                <td>@movie.Name</td>
+                <td>@Html.ActionLink(movie.Name ,"Edit" , "Movies" , new {movie.Id},null )</td>
                 <td>@movie.Genre.Name</td>
             </tr>
         }

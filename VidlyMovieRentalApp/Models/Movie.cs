@@ -9,14 +9,17 @@ namespace VidlyMovieRentalApp.Models
     public class Movie
     {
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         [Required]
+        [Display(Name = "Released Date")]
         public DateTime ReleasedDate { get; set; }
         [Required]
         public DateTime DateAdded { get; set; }
         [Required]
+        [Display(Name = "Number In Stock")]
         public byte NumberInStock  { get; set; }
-        [Required]
+        
         public Genre Genre { get; set; }
         [Required]
         public byte GenreId { get; set; }

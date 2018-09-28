@@ -7,7 +7,7 @@ using VidlyMovieRentalApp.Models;
 
 namespace VidlyMovieRentalApp.ViewModels
 {
-    public class NewCustomerViewModel
+    public class CustomerFormViewModel
     {
         public Customer Customer { get; set; }
         [Display(Name = "Membership Type")]
