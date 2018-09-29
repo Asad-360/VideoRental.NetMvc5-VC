@@ -11,7 +11,7 @@ namespace VidlyMovieRentalApp.Controllers
 {
     public class CustomerController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public CustomerController()
         {

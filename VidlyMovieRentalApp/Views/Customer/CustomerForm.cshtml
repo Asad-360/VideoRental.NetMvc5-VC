@@ -1,6 +1,6 @@
 ﻿@model VidlyMovieRentalApp.ViewModels.CustomerFormViewModel
 @{
-    ViewBag.Title = "MovieForm";
+    ViewBag.Title = "New Customer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,13 +23,11 @@
         @Html.TextBoxFor(c => c.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
-
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsLetter) Subscribed To NewsLetter?
         </label>
     </div>
-
     @Html.HiddenFor(m => m.Customer.Id)
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>

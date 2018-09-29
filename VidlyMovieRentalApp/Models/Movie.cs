@@ -9,7 +9,7 @@ namespace VidlyMovieRentalApp.Models
     public class Movie
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please Enter Movie Name")]
         public string Name { get; set; }
         [Required]
         [Display(Name = "Released Date")]
@@ -17,6 +17,7 @@ namespace VidlyMovieRentalApp.Models
         [Required]
         public DateTime DateAdded { get; set; }
         [Required]
+        [Range(1,20)]
         [Display(Name = "Number In Stock")]
         public byte NumberInStock  { get; set; }
         

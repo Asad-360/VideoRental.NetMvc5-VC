@@ -25,20 +25,32 @@ namespace VidlyMovieRentalApp.Controllers
             return View(movies);
         }
 
-        public ActionResult MovieForm()
+        public ActionResult New()
         {
             var genreList = _context.Genres.ToList();
 
             var viewModel = new MovieFormViewModel
             {
+                
                 Genres = genreList
             };
 
             return View("MovieForm", viewModel);
         }
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                var genreList = _context.Genres.ToList();
+
+                var viewModel = new MovieFormViewModel(movie)
+                {
+                    Genres = genreList
+                };
+                return View("MovieForm", viewModel);
+            }
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -61,10 +73,13 @@ namespace VidlyMovieRentalApp.Controllers
         {
 
             var movies = _context.Movies.SingleOrDefault(m => m.Id == id);
-
-            var viewModel = new MovieFormViewModel
+            if (movies == null)
             {
-                Movie = movies,
+                return HttpNotFound();
+            }
+
+            var viewModel = new MovieFormViewModel(movies)
+            {
                 Genres = _context.Genres
             };
             return View("MovieForm", viewModel);
