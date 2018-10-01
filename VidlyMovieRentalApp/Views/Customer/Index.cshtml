@@ -38,11 +38,11 @@ else
 
 @section scripts{
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#customer .js-delete").on("click",
-                function () {
+                function() {
                     var button = $(this);
-                    if (confirm("Are you sure want to delete the customer?")) {
+                    bootbox.confirm("Are you sure want to delete the customer?", function() {
                         $.ajax({
                             url: "/api/customers/" + button.attr("data-customer-id"),
                             method: "DELETE",
@@ -50,7 +50,7 @@ else
                                 button.parents("tr").remove();
                             }
                         });
-                    }
+                    });
                 });
         });
     </script>
