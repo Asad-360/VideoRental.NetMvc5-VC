@@ -9,7 +9,7 @@ namespace VidlyMovieRentalApp.Dtos
 {
     public class CustomerDto
     {
-        [Min18YearsIfAMember]
+       // [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         public int Id { get; set; }
@@ -17,7 +17,7 @@ namespace VidlyMovieRentalApp.Dtos
         [Required(ErrorMessage = "Please Enter Customer Name")]
         [StringLength(255)]
 
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
