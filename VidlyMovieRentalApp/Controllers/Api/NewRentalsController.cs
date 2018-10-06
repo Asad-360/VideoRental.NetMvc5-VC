@@ -38,7 +38,7 @@ namespace VidlyMovieRentalApp.Controllers.Api
             {
                 foreach (var movie in movies)
                 {
-                    if (movie.NumberAvailible ==0)
+                    if (movie.NumberAvailible == 0)
                     {
                         return BadRequest("Movie is not avalible.");
                     }
@@ -47,11 +47,11 @@ namespace VidlyMovieRentalApp.Controllers.Api
                     var rentals = new Rental
                     {
                         Customer = customers,
-                        Movies = movie,
+                        Movie = movie,
                         DateRented = DateTime.Now,
                     };
                     _context.Rentals.Add(rentals);
-                
+
                 }
 
 

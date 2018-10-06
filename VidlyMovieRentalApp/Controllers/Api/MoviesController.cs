@@ -25,14 +25,14 @@ namespace VidlyMovieRentalApp.Controllers.Api
         public IHttpActionResult Getmovies(string query = null)
         {
             var moviesQuery = _context
-               .Movies.Include(m => m.Genre).Where(m=>m.NumberAvailible>0);
+               .Movies.Include(m => m.Genre).Where(m => m.NumberAvailible > 0);
 
             if (!String.IsNullOrWhiteSpace(query))
             {
                 moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
             }
-              var movieDtos =  moviesQuery.ToList()
-               .Select(Mapper.Map<Movie, MovieDto>);
+            var movieDtos = moviesQuery.ToList()
+             .Select(Mapper.Map<Movie, MovieDto>);
             return Ok(movieDtos);
         }
 

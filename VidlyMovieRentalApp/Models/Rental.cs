@@ -9,10 +9,14 @@ namespace VidlyMovieRentalApp.Models
     public class Rental
     {
         public int Id { get; set; }
-        [Required]
+      
         public Customer Customer { get; set; }
         [Required]
-        public Movie Movies { get; set; }
+        public int CustomerId { get; set; }
+        
+        public Movie Movie { get; set; }
+        [Required]
+        public int MovieId { get; set; }
         public DateTime? DateReturned { get; set; }
         public DateTime DateRented { get; set; }
     }

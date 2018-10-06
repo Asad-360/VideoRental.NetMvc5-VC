@@ -290,17 +290,13 @@
     <Compile Include="Migrations\201810051336249_AddPhoneNumber.Designer.cs">
       <DependentUpon>201810051336249_AddPhoneNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810060358099_AddRentalsToModels.cs" />
-    <Compile Include="Migrations\201810060358099_AddRentalsToModels.Designer.cs">
-      <DependentUpon>201810060358099_AddRentalsToModels.cs</DependentUpon>
+    <Compile Include="Migrations\201810060942145_AddRentalsToDatabase.cs" />
+    <Compile Include="Migrations\201810060942145_AddRentalsToDatabase.Designer.cs">
+      <DependentUpon>201810060942145_AddRentalsToDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810060510373_AddNumberAvailibleToMovies.cs" />
-    <Compile Include="Migrations\201810060510373_AddNumberAvailibleToMovies.Designer.cs">
-      <DependentUpon>201810060510373_AddNumberAvailibleToMovies.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810060513499_AddNumberAvailibleToMovies1.cs" />
-    <Compile Include="Migrations\201810060513499_AddNumberAvailibleToMovies1.Designer.cs">
-      <DependentUpon>201810060513499_AddNumberAvailibleToMovies1.cs</DependentUpon>
+    <Compile Include="Migrations\201810060944255_AddNumberAvailibleToMovie.cs" />
+    <Compile Include="Migrations\201810060944255_AddNumberAvailibleToMovie.Designer.cs">
+      <DependentUpon>201810060944255_AddNumberAvailibleToMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -632,14 +628,11 @@
     <EmbeddedResource Include="Migrations\201810051336249_AddPhoneNumber.resx">
       <DependentUpon>201810051336249_AddPhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810060358099_AddRentalsToModels.resx">
-      <DependentUpon>201810060358099_AddRentalsToModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810060942145_AddRentalsToDatabase.resx">
+      <DependentUpon>201810060942145_AddRentalsToDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810060510373_AddNumberAvailibleToMovies.resx">
-      <DependentUpon>201810060510373_AddNumberAvailibleToMovies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810060513499_AddNumberAvailibleToMovies1.resx">
-      <DependentUpon>201810060513499_AddNumberAvailibleToMovies1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810060944255_AddNumberAvailibleToMovie.resx">
+      <DependentUpon>201810060944255_AddNumberAvailibleToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
