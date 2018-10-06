@@ -25,5 +25,7 @@ namespace VidlyMovieRentalApp.Models
         [Required]
         public byte GenreId { get; set; }
 
+        public byte NumberAvailible { get; set; }
+
     }
 }
