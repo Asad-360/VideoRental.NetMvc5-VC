@@ -1,0 +1,44 @@
+﻿@model IEnumerable<VidlyMovieRentalApp.Models.Movie>
+@{
+    // Title of the page shown in the browser
+    ViewBag.Title = "Index";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    <a href="/movies/new" type="button" class="btn btn-primary">New Movie</a>
+</h2>
+<table class="table table-bordered table-hover table-striped" id="movies">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+   
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+          var parentTable =   $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+
+                columns: [
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "genre.name"
+                    }
+                ]
+            });      
+
+        });
+    </script>
+}

@@ -12,7 +12,7 @@ namespace VidlyMovieRentalApp.Controllers
 {
     public class MoviesController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public MoviesController()
         {
@@ -21,10 +21,16 @@ namespace VidlyMovieRentalApp.Controllers
         // GET: Movies/Index
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-            return View(movies);
-        }
+          //  var movies = _context.Movies.Include(m => m.Genre).ToList();
+            if (User.IsInRole("CanManageMovies"))
+            {
+                return View("List");
+            }
 
+            return View("ReadOnlyList");
+
+        }
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genreList = _context.Genres.ToList();
@@ -37,6 +43,8 @@ namespace VidlyMovieRentalApp.Controllers
 
             return View("MovieForm", viewModel);
         }
+
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Save(Movie movie)
@@ -68,7 +76,7 @@ namespace VidlyMovieRentalApp.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
 

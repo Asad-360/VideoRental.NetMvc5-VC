@@ -9,6 +9,7 @@ using VidlyMovieRentalApp.ViewModels;
 
 namespace VidlyMovieRentalApp.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         private readonly ApplicationDbContext _context;
