@@ -21,18 +21,11 @@ namespace VidlyMovieRentalApp.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalsDto newRentalsDto)
         {
-            if (newRentalsDto.MovieIds.Count == 0)
-            {
-                return BadRequest("No Movie Id Has Been Given!");
-            }
+           
 
             var movies = _context.Movies.Where(m => newRentalsDto.MovieIds.Contains(m.Id)).ToList();
 
-            var customers = _context.Customers.SingleOrDefault(c => c.Id == newRentalsDto.CustomerId);
-            if (customers == null)
-            {
-                return BadRequest();
-            }
+            var customers = _context.Customers.Single(c => c.Id == newRentalsDto.CustomerId);
 
             if (movies.Count != newRentalsDto.MovieIds.Count)
             {
