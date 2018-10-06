@@ -6,7 +6,7 @@
 
 <h2>New Rental Form</h2>
 
-<form>
+<form id="newRentalform">
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
@@ -36,7 +36,6 @@
         $(document).ready(function() {
 
 
-
             var vm = {
                 movieIds: []
                 //empty movie arry will be used for server
@@ -59,29 +58,41 @@
                 function(e, customer) {
                     vm.customerId = customer.id;
                 });
-        
-
-        var movies = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            remote: {
-                url: '/api/movies?query=%QUERY',
-                wildcard: '%QUERY'
-            }
-        });
-
-        $('#movie').typeahead(null,
-            {
-                name: 'movies',
-                display: 'name',
-                source: movies
-            }).on("typeahead:select",
-            function(e, movie) {
-                $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
-                $("movie").typeahead("val", "");
-                vm.movieIds.push(movie.id);});
 
 
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movies?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead(null,
+                {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select",
+                function(e, movie) {
+                    $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
+                    $("movie").typeahead("val", "");
+                    vm.movieIds.push(movie.id);
+                });
+
+            $('#newRentalform').submit(function(e) {
+                e.preventDefault(); // for bhaving it from html form submissin bcz we are using it for ajax submission
+                $.ajax({
+                    url: "/api/newrentals",
+                    method: "post",
+                    data: vm
+                }).done(function() {
+                    console.log('success');
+                }).fail(function() {
+                    console.log('failure');
+                });
+            });
 
         });
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -32,23 +33,34 @@ namespace VidlyMovieRentalApp.Controllers.Api
                 return BadRequest("One or more movies are invalid!");
             }
 
-            foreach (var movie in movies)
+
+            try
             {
-                if (movie.NumberAvailible ==0)
+                foreach (var movie in movies)
                 {
-                    return BadRequest("Movie is not avalible.");
+                    if (movie.NumberAvailible ==0)
+                    {
+                        return BadRequest("Movie is not avalible.");
+                    }
+
+                    movie.NumberAvailible--;
+                    var rentals = new Rental
+                    {
+                        Customer = customers,
+                        Movies = movie,
+                        DateRented = DateTime.Now,
+                    };
+                    _context.Rentals.Add(rentals);
+                
                 }
-                var rentals = new Rental
-                {
-                    Customer = customers,
-                    Movies = movie,
-                    DateRented = DateTime.Now,
-                };
-                _context.Rentals.Add(rentals);
+
+
+                _context.SaveChanges();
             }
-
-
-            _context.SaveChanges();
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            }
             return Ok();
         }
     }
